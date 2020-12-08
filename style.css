@@ -1,0 +1,382 @@
+/*
+Theme Name: Authentic Theme
+Text Domain: Authentic Theme
+Version: 1.0
+Description: Blog page template theme
+Tags: responsive, blog
+Author: Scott Tenefrancia
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --blue: #007bff;
+  --indigo: #6610f2;
+  --purple: #6f42c1;
+  --pink: #ee3577;
+  --red: #dc3545;
+  --orange: #cc4b00;
+  --yellow: #ffc700;
+  --green: #28a745;
+  --teal: #20c997;
+  --cyan: #17a2b8;
+  --white: #fff;
+  --gray: #767676;
+  --gray-dark: #333333;
+  --primary: #004eae;
+  --secondary: #4f4f4f;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --light: #c2c2c2;
+  --lightgray: #eeeeee;
+  --dark: #434242;
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas,
+    "Liberation Mono", "Courier New", monospace;
+  /* Font Sizes */
+  --font-normal: 1em;
+  --font-small: 0.8125rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.15;
+}
+body {
+  color: var(--secondary);
+  overflow-x: hidden;
+  font-family: "Raleway", sans-serif;
+}
+a {
+  text-decoration: underline;
+  text-decoration-color: var(--orange);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--gray-dark);
+}
+
+h1 {
+  font-size: 36px;
+}
+
+p {
+  font-size: 14px;
+  color: var(--gray-dark);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+header > h4 {
+  display: inline-block;
+  color: white;
+  vertical-align: text-top;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+img {
+  vertical-align: none;
+}
+
+.date {
+  color: var(--gray);
+}
+
+.blog-title {
+  color: var(--orange);
+  text-decoration: underline;
+  font-weight: 400;
+}
+
+.blog-link {
+  color: var(--orange);
+}
+
+.blog-img {
+  width: 65%;
+  padding: 0 0 0 30px;
+}
+
+.blog-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  font-weight: bold;
+  padding: 0.375rem 1rem;
+  height: 2.75rem;
+  transition: all 0.4s ease-in-out;
+}
+
+.btn:focus,
+.btn.focus {
+  box-shadow: none !important;
+}
+
+.btn-primary {
+  color: #fff;
+}
+
+.header {
+  position: relative;
+  display: flex;
+  left: 0;
+  top: 0;
+  height: 8vh;
+  background: var(--primary);
+  color: #fff;
+}
+.header .site-title {
+  color: var(--white);
+  font-size: 1.2em;
+  display: block;
+}
+
+.header .btn-primary {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: transparent;
+  font-size: 1rem;
+  padding-top: 0.5rem;
+}
+
+.header .btn-primary:hover {
+  background: rgba(0, 0, 0, 0.4);
+  border-color: transparent;
+}
+
+.header .navbar {
+  padding: 0 1.2rem;
+  overflow: hidden;
+}
+
+.header .navbar-dark .navbar-toggler {
+  border: none;
+  padding: 0.25rem 0.6rem;
+}
+
+.header .navbar-dark .navbar-toggler:hover {
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+}
+
+.header .navbar-dark .navbar-toggler-icon {
+  background-image: url("/wp-content/themes/authentictheme/assets/images/menu.svg");
+}
+
+.navbar-toggler-icon {
+  display: inline-block !important;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background: no-repeat center center;
+  background-size: 100% 100%;
+}
+
+.navbar-exit-icon {
+  background-image: url("/wp-content/themes/authentictheme/assets/images/close.svg");
+  display: inline-block !important;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  content: "";
+  background-size: 100% 100%;
+}
+
+.header .nav-item {
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.header .nav-item.active a {
+  background: #013371;
+  color: var(--yellow);
+}
+
+.header .nav-item.active a:hover {
+  text-decoration: none;
+}
+
+.header .nav-item a {
+  color: rgba(255, 255, 255, 0.8);
+  padding: 2rem 1rem;
+  text-decoration: underline;
+}
+
+.header .nav-item a:hover {
+  text-decoration: underline;
+  color: rgba(0, 0, 0, 0.6);
+}
+.logo {
+  width: 50px;
+}
+.social-list a {
+  width: 32px;
+  height: 32px;
+  padding-top: 5px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 50%;
+  transition: all 0.2s ease-in-out;
+  background-color: #fff;
+}
+
+.social-list a:hover {
+  color: var(--secondary);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.main-wrapper {
+  background: #fff;
+}
+
+.main-wrapper .container {
+  width: 100%;
+  max-width: 1400px;
+  height: auto;
+}
+.page-title {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  transition: all 0.2s;
+}
+.sticky {
+  padding: 1em 0 !important;
+}
+.page-title .heading {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+}
+
+.gradient {
+  background: #006ef5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .social-list a {
+    transition: none;
+  }
+  .btn {
+    transition: none;
+  }
+}
+
+@media (min-width: 768px) {
+}
+
+@media (max-width: 991.98px) {
+  .page-title {
+    position: static;
+  }
+  .header {
+    position: relative;
+    width: inherit;
+    height: auto;
+  }
+
+  .header .site-title {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 1.2rem;
+    color: var(--white);
+    font-size: 1.5em;
+    display: block;
+  }
+
+  .header .btn-primary {
+    width: 100%;
+  }
+
+  .header .navbar {
+    padding: 1rem;
+  }
+
+  .main-wrapper {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-wrapper .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  a {
+    display: block;
+  }
+
+  .blog-img {
+    width: 100%;
+    padding: 0;
+  }
+
+  .header .nav-item {
+    border-bottom: 1px solid rgb(255, 255, 255, 0.3);
+  }
+}
+
+@media (max-width: 425px) {
+  header > h4 {
+    display: none;
+  }
+
+  button {
+    margin: 8px 8px;
+  }
+
+  .page-title {
+    margin-left: 18%;
+    position: absolute;
+    width: 82%;
+    padding-left: 12%;
+  }
+
+  .header {
+    display: block;
+  }
+
+  .text-center {
+    text-align: start !important;
+  }
+  .header .nav-item a {
+    padding: 0.8rem 1rem;
+  }
+  .header .navbar {
+    padding: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1400px;
+  }
+}
